@@ -1,0 +1,8 @@
+# Temp
+/__Previews/*
+/_Logs/*
+/History/*
+
+# Log
+*.html
+*.PrjPCBStructure
