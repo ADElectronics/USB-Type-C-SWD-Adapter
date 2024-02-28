@@ -1,0 +1,14 @@
+{
+   "files.associations": {
+   },
+   "cortex-debug.variableUseNaturalFormat": false,
+   "target": {
+      // "${config:target.device}"
+      "device": "STM32F030F4",
+      "debugSpeed": "8000",
+      "debugIf": "swd",
+      "PathToSDK": "../../llsdk",
+      "PathToSVD": "${config:target.PathToSDK}/tools/svd/st/stm32f0xx.svd",
+      "PathToToolchain": "C:/Data/GCC/xpack-arm-none-eabi-gcc",
+   }
+}

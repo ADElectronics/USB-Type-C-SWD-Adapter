@@ -1,0 +1,29 @@
+{
+   "configurations":
+   [
+      {
+         "name": "ARM",
+         "compilerPath": "${config:target.PathToToolchain}/bin/arm-none-eabi-gcc.exe",
+         "includePath": [
+            "${config:target.PathToToolchain}/arm-none-eabi/include/**",
+            "${config:target.PathToToolchain}/arm-none-eabi/include/sys/**",
+            "${config:target.PathToToolchain}/lib/**",
+
+            "${workspaceRoot}\\Drivers\\**",
+            "${workspaceRoot}\\DriversExt\\**",
+            "${workspaceRoot}\\Src\\**",
+            "${workspaceRoot}\\Inc\\**"
+         ],
+         "defines": [
+            "STM32F030x6",
+            "USE_FULL_LL_DRIVER",
+            "HSE_VALUE=16000000U",
+            "GCC_ARMCM0"
+         ],
+         "cStandard": "c11",
+         "cppStandard": "c++17",
+         "intelliSenseMode": "windows-gcc-arm"
+      }
+   ],
+   "version": 4
+}

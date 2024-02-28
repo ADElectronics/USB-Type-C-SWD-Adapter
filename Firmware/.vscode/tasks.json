@@ -1,0 +1,85 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+/* ====================================== Build Commands ====================================== */
+      {
+         "label": "Make Build",
+         "type": "shell",
+         "command": "make -s -j 4 all",
+         "options": {
+            "cwd": "${workspaceRoot}",
+            "shell": {
+               "executable": "cmd.exe",
+               "args": ["/C"]
+            }
+         }, 
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "problemMatcher": ["$gcc"]
+      },
+      {
+         "label": "Make Clean",
+         "type": "shell",
+         "command": "make -s clean",
+         "options": {
+            "cwd": "${workspaceRoot}",
+            "shell": {
+               "executable": "cmd.exe",
+               "args": ["/C"]
+            }
+         },
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "problemMatcher": ["$gcc"]
+      },
+/* ====================================== JLink Commands ====================================== */
+      {
+         "label": "JLink - Write to Flash",
+         "type": "shell",
+         "command": "JLink.exe",
+         "args": [
+            "-Device",
+            "${config:target.device}",
+            "-If",
+            "SWD",
+            "-Speed",
+            "${config:target.debugSpeed}",
+            "JLink/FlashMCU.JLinkScript"
+         ],
+         "options": {
+            "cwd": "${workspaceRoot}",
+            "shell": {
+               "executable": "cmd.exe",
+               "args": ["/C"]
+            }
+         },
+         "problemMatcher": []
+      },
+      {
+         "label": "JLink - Erase Flash",
+         "type": "shell",
+         "command": "JLink.exe",
+         "args": [
+            "-Device",
+            "${config:target.device}",
+            "-If",
+            "SWD",
+            "-Speed",
+            "${config:target.debugSpeed}",
+            "JLink/EraseMCU.JLinkScript"
+         ],
+         "options": {
+            "cwd": "${workspaceRoot}",
+            "shell": {
+               "executable": "cmd.exe",
+               "args": ["/C"]
+            }
+         },
+         "problemMatcher": []
+      },
+   ]
+}

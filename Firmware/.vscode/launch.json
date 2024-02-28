@@ -1,0 +1,22 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Cortex Debug",
+         "cwd": "${workspaceRoot}",
+         "executable": "./build/bin/firmware.elf",
+         "svdFile": "${config:target.PathToSVD}",
+         "request": "launch",
+         "type": "cortex-debug",
+         "servertype": "jlink",
+         "device": "${config:target.device}",
+         "interface": "${config:target.debugIf}",
+         "liveWatch":
+         {
+            "enabled": true,
+            "samplesPerSecond": 2
+         },
+         "runToEntryPoint": "main"
+      }
+   ]
+}
